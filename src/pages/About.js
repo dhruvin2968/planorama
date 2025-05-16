@@ -52,12 +52,13 @@ export const AboutPage = () => {
       link: "/mydashboard",
     },
     {
-      icon: FaSuitcaseRolling,
-      iconClass: "text-pink-600",
-      title: "Smart Packing Assistant",
-      desc: "Auto-generate packing lists based on destination, duration, and travel style.",
-      link: "/planner",
-    },
+  icon: FaSuitcaseRolling,
+  iconClass: "text-pink-600",
+  title: "AI Travel Chatbot 🤖",
+  desc: "Ask anything, anytime! Get instant travel suggestions, itinerary help, and packing tips from your smart assistant.",
+  link: "/chatbot",
+},
+
     {
       icon: FaCalendarAlt,
       iconClass: "text-indigo-500",

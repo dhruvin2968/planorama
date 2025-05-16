@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import Beach from "../components/Beach";
-import { ThemeSelector } from "../components/ThemeSelector";
 import { Chatbot } from "../components/ChatBot";
-import Carousel from "../components/Carousel"
 import { motion } from "framer-motion";
 import AboutComponent from "../components/About"
 export const Home = () => {
@@ -93,8 +91,7 @@ export const Home = () => {
       </div>
       <div id="theme-selector">
       <AboutComponent/>
-      <Carousel/>
-      <ThemeSelector />
+     
       </div>
       {/* Theme Selector Section */}
       <div id="theme-selector">

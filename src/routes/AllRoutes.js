@@ -1,6 +1,6 @@
 import {Routes,Route} from "react-router-dom";
-import { Home,PageNotFound,UserDashboard,AboutPage,FAQ,Contact,Destination, PackingCheckList,CurrencyConverter, Gallery, Planner, BudgetTracker, Phrases, InteractiveItinerary, AirportNavigation, Mood} from "../pages";
-import ItineraryGenerator from "../pages/ItineraryGenerator";
+import { Home,PageNotFound,UserDashboard,AboutPage,FAQ,Contact,Destination, PackingCheckList,CurrencyConverter, Gallery, Planner, BudgetTracker, Phrases, InteractiveItinerary, AirportNavigation, Mood,ItineraryGenerator} from "../pages";
+
 
 
 export const AllRoutes = () => {
