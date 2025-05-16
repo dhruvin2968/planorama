@@ -1,0 +1,99 @@
+.App {
+  text-align: center;
+}
+h1,h2,h3
+{
+  font-family: "Playfair", serif;
+  font-weight: 1000;
+}
+body
+{
+  font-family: "Playfair", serif;
+
+  margin-top: 0px;
+}
+body::-webkit-scrollbar
+{
+    display:block;
+    width:6px;
+    background-color: rgb(20, 231, 255);
+}
+body::-webkit-scrollbar-thumb
+{
+    background-color: #0b006d;
+    border-radius: 100px;
+}
+nav a {
+  pointer-events: auto;
+}
+/* Card Component */
+.card{
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: #cbc9c9 0px 1px 4px;
+  margin: 20px 5px;
+  color:#001532;
+  
+}
+
+.card .title{
+  font-size: 20px;
+  margin: 20px 5px;
+  font-weight: 600;
+  color:#001e47
+}
+
+.card .description{
+  font-size: 16px;
+  margin: 20px 5px;
+  color:#001532
+}
+
+.card .control {
+  font-size: 16px;
+  margin: 20px 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card .author {
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #1c59ae13;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

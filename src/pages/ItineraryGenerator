@@ -1,0 +1,13 @@
+import { ThemeSelector } from "../components/ThemeSelector";
+import Carousel from "../components/Carousel";
+
+const ItineraryGenerator = () => {
+  return (
+    <div>
+      <Carousel />
+      <ThemeSelector />
+    </div>
+  );
+};
+
+export default ItineraryGenerator;
