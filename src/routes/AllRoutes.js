@@ -1,5 +1,5 @@
 import {Routes,Route} from "react-router-dom";
-import { Home,PageNotFound,UserDashboard,AboutPage,FAQ,Contact,Destination, PackingCheckList,CurrencyConverter, Gallery, Planner, BudgetTracker, Phrases, InteractiveItinerary, AirportNavigation, Mood,ItineraryGenerator} from "../pages";
+import { Home,PageNotFound,UserDashboard,AboutPage,FAQ,Contact,Destination, PackingCheckList,CurrencyConverter, Gallery, Planner, BudgetTracker, Phrases, Mood,ItineraryGenerator} from "../pages";
 
 
 
@@ -20,8 +20,6 @@ export const AllRoutes = () => {
     <Route path="planner" element={<Planner />} />
     <Route path="packing" element={<PackingCheckList />} />
     <Route path="phrases" element={<Phrases />} />
-    <Route path="itinerary" element={<InteractiveItinerary/>} />
-    <Route path="navigation" element={<AirportNavigation/>} />
     <Route path="mood" element={<Mood/>} />
     <Route path="itinerarygenerator" element={<ItineraryGenerator/>} />
     </Routes>

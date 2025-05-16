@@ -4,12 +4,10 @@ import {
   FaGlobe,
   FaUsers,
   FaSuitcaseRolling,
-  FaCheckCircle,
   FaMoneyBillWave,
   FaCalendarAlt,
   FaImages,
   FaLanguage,
-  FaMapSigns,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -23,13 +21,7 @@ export const AboutPage = () => {
       desc: "Filter and discover global locations with regional highlights and emojis.",
       link: "/destination",
     },
-    {
-      icon: FaCheckCircle,
-      iconClass: "text-yellow-500",
-      title: "Packing Checklist ✅",
-      desc: "Stay organized with category-based, customizable packing lists.",
-      link: "/packing",
-    },
+    
     {
       icon: FaMoneyBillWave,
       iconClass: "text-pink-500",
@@ -87,34 +79,22 @@ export const AboutPage = () => {
       desc: "Generate useful phrases based on destination & travel type.",
       link: "/phrases",
     },
-    {
-      icon: FaMapMarkedAlt,
-      iconClass: "text-cyan-500",
-      title: "Interactive Itinerary ✈️",
-      desc: "Drag-to-reorder daily plans and visualize your adventure flow.",
-      link: "/itinerary",
-    },
-    {
-      icon: FaMapSigns,
-      iconClass: "text-orange-500",
-      title: "Airport Gate UI 🛫",
-      desc: "Mock airport interface with gate filter and boarding visualization.",
-      link: "/navigation",
-    },
+   
+    
   ];
 
   return (
-    <div className="min-h-screen bg-Bluee px-6 py-12 flex flex-col items-center">
+    <div className="min-h-screen bg-Bluee dark:bg-black px-6 py-12 flex flex-col items-center">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="text-center mb-10"
       >
-        <h1 className="text-5xl font-extrabold text-blue-700 mb-4 tracking-tight">
-          About Planorama 🚀
+        <h1 className="text-5xl font-extrabold text-blue-700 dark:text-white mb-4 tracking-tight">
+         Ablout Planorama 🚀
         </h1>
-        <p className="text-gray-700 max-w-3xl mx-auto text-lg">
+        <p className="text-gray-700 dark:text-white max-w-3xl mx-auto text-lg">
           Planorama is your all-in-one travel companion. From intelligent itinerary generation to detailed planning tools,
           it helps you travel smarter, better, and beautifully.
         </p>

@@ -1,11 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: ["./src/**/*.{html,js,jsx}"],
   theme: {
     extend: {
       colors: {
         Redd: "rgb(255, 0, 0)", // Define your custom red color
-        Bluee:"#B3EBF2"
+        Bluee:"#F9FCFF"
 
       },
       textStroke: {
