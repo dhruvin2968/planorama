@@ -77,7 +77,7 @@ export const Chatbot = () => {
 
       {/* Chatbot UI */}
       <div
-        className={`fixed bottom-4 right-4 z-40 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform transition-transform duration-300 ${
+        className={`fixed bottom-4 right-4 z-40 bg-white dark:bg-indigo-100 rounded-lg shadow-lg overflow-hidden flex flex-col transform transition-transform duration-300 ${
           isOpen ? 'translate-x-0' : 'translate-x-[120%]'
         } ${isFullScreen ? 'w-[90vw] h-[80vh]' : 'md:w-[25vw] w-[85vw] h-[60vh]'}`}
       >

@@ -78,7 +78,7 @@ export const PostCard = ({ post, toggle, setToggle }) => {
           <div className="flex justify-between items-center p-4 rounded-lg">
             <button
               onClick={handleShare}
-              className="px-4 py-2 bg-white text-blue-600 font-semibold rounded-lg shadow-md hover:bg-gray-200 transition duration-300 ease-in-out"
+              className="px-4 py-2 bg-white dark:bg-indigo-100 text-blue-600 font-semibold rounded-lg shadow-md hover:bg-gray-200 transition duration-300 ease-in-out"
             >
               Download Itinerary
             </button>

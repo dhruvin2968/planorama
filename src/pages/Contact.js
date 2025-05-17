@@ -57,7 +57,7 @@ export const Contact = () => {
       className=" bg-indigo-100 dark:bg-gradient-to-br dark:from-indigo-900 dark:via-gray-900  dark:to-black w-full min-h-screen flex items-center justify-center  bg-cover bg-center"
       
     >
-      <div className="bg-white dark:bg-black dark:from-indigo-900 dark:via-gray-900  dark:to-black  bg-opacity-90 p-8 md:p-12 rounded-2xl shadow-lg max-w-3xl w-full">
+      <div className="bg-white  dark:bg-black dark:from-indigo-900 dark:via-gray-900  dark:to-black  bg-opacity-90 p-8 md:p-12 rounded-2xl shadow-lg max-w-3xl w-full">
         <h2 className="text-3xl font-bold dark:text-white text-gray-800 text-center mb-6">
           Get in Touch
         </h2>
@@ -75,7 +75,7 @@ export const Contact = () => {
             <MapPin size={20} /> <span>Mumbai, India</span>
           </div>
         </div>
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4 ">
           <input
             type="text"
             name="name"
@@ -83,7 +83,7 @@ export const Contact = () => {
             value={form.name}
             onChange={handleChange}
             required
-            className="p-3 border rounded-lg w-full"
+            className="p-3 border rounded-lg w-full dark:bg-indigo-100"
           />
           <input
             type="email"
@@ -92,7 +92,7 @@ export const Contact = () => {
             value={form.email}
             onChange={handleChange}
             required
-            className="p-3 border rounded-lg w-full"
+            className="p-3 border rounded-lg w-full dark:bg-indigo-100"
           />
           <textarea
             name="message"
@@ -100,7 +100,7 @@ export const Contact = () => {
             value={form.message}
             onChange={handleChange}
             required
-            className="p-3 border rounded-lg w-full h-32"
+            className="p-3 border rounded-lg w-full h-32 dark:bg-indigo-100"
           />
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <button

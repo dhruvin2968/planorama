@@ -28,19 +28,14 @@ const AboutComponent = () => {
       link: "/itinerarygenerator",
     },
     {
-   icon: FaUsers,
-  iconClass: "text-pink-600",
-  title: "Live Chatbot Assistance 🤖",
-  desc: "Ask anything, anytime! Get instant travel suggestions, itinerary help or any help instantly",
-  link: "/",
-},
-    {
       icon: FaCalendarAlt,
       iconClass: "text-indigo-500",
       title: "Trip Countdown + Planner 📅",
       desc: "Visual countdown with a daily notes planner for your entire trip.",
       link: "/planner",
     },
+    
+    
     {
       icon: FaMoneyBillWave,
       iconClass: "text-rose-500",
@@ -54,13 +49,21 @@ const AboutComponent = () => {
       title: "Phrasebook 🗣️",
       desc: "Generate useful phrases based on destination & travel type.",
       link: "/phrases",
-    }
+    },
+    {
+   icon: FaUsers,
+  iconClass: "text-pink-600",
+  title: "Live Chatbot Assistance 🤖",
+  desc: "Ask anything, anytime! Get instant travel suggestions, itinerary help or any help instantly",
+  link: "/",
+}
     
   ];
 
   return (
     <div className="min-h-screen bg-indigo-100 from-indigo-100 via-indigo-200 to-indigo-100
          dark:bg-black px-6 py-12 flex flex-col items-center">
+          
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -83,7 +86,7 @@ const AboutComponent = () => {
             <Link to={feature.link || "#"} key={index}>
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className=" bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center transition-all cursor-pointer"
+                className=" bg-gray-50 dark:bg-indigo-100 rounded-2xl shadow-lg p-6 flex flex-col items-center text-center transition-all cursor-pointer"
               >
                 <Icon className={`${feature.iconClass} text-5xl mb-4`} />
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">{feature.title}</h3>

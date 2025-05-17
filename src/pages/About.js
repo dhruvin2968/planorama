@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 
 
 export const AboutPage = () => {
+   const isAuth=  JSON.parse(localStorage.getItem("isAuth")) || false;
   const features = [
     {
       icon: FaGlobe,
@@ -37,19 +38,19 @@ export const AboutPage = () => {
       link: "/itinerarygenerator",
     },
     {
-      icon: FaUsers,
+      icon: FaSuitcaseRolling,
       iconClass: "text-orange-500",
       title: "Download Your Itineraries",
       desc: "Easily export and access your saved travel plans anytime, anywhere.",
-      link: "/mydashboard",
+      link: isAuth?"/mydashboard":"/itinerarygenerator",
     },
     {
-  icon: FaSuitcaseRolling,
-  iconClass: "text-pink-600",
-  title: "AI Travel Chatbot 🤖",
-  desc: "Ask anything, anytime! Get instant travel suggestions, itinerary help, and packing tips from your smart assistant.",
-  link: "/chatbot",
-},
+      icon: FaUsers,
+     iconClass: "text-pink-600",
+     title: "Live Chatbot Assistance 🤖",
+     desc: "Ask anything, anytime! Get instant travel suggestions, itinerary help or any help instantly",
+     link: "/",
+   },
 
     {
       icon: FaCalendarAlt,
@@ -86,6 +87,7 @@ export const AboutPage = () => {
   return (
     <div className="min-h-screen bg -indigo-100
          dark:bgblack px-6 py-12 flex flex-col items-center">
+          
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -108,9 +110,9 @@ export const AboutPage = () => {
             <Link to={feature.link || "#"} key={index}>
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center transition-all cursor-pointer"
+                className="bg-white dark:bg-indigo-100 rounded-2xl shadow-lg p-6 flex flex-col items-center text-center transition-all cursor-pointer"
               >
-                <Icon className={`${feature.iconClass} text-5xl mb-4`} />
+                <Icon className={`${feature.iconClass}  dark:bg-indigo-100 text-5xl mb-4`} />
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">{feature.title}</h3>
                 <p className="text-gray-600 text-sm">{feature.desc}</p>
               </motion.div>

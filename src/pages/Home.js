@@ -3,6 +3,7 @@ import Beach from "../components/Beach";
 import { Chatbot } from "../components/ChatBot";
 import { motion } from "framer-motion";
 import AboutComponent from "../components/About"
+import { InfiniteScroller } from "../components/InfiniteScroller";
 export const Home = () => {
   useEffect(() => {
     document.title = `Planorama - The Perfect TravelPlanner`;
@@ -91,6 +92,7 @@ export const Home = () => {
       </div>
       <div id="theme-selector">
       <AboutComponent/>
+      <InfiniteScroller/>
      
       </div>
       {/* Theme Selector Section */}

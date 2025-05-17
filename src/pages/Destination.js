@@ -196,19 +196,31 @@ export const Destination=()=>{
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b dark:bg-black  py-12 px-4 sm:px-6 lg:px-20">
-      <header className="text-center mb-12">
+    <div className="relative min-h-screen bg-indigo-100 dark:bg-black from-blue-50 via-blue-100 to-indigo-100 dark:bg-black py-12 px-4 sm:px-6 lg:px-20 overflow-x-hidden">
+      {/* Animated background blobs */}
+      <motion.div
+        className="absolute -top-32 -left-32 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl z-0"
+        animate={{ scale: [1, 1.2, 1], rotate: [0, 180] }}
+        transition={{ duration: 10, repeat: Infinity }}
+      />
+      <motion.div
+        className="absolute -bottom-32 -right-32 w-[28rem] h-[28rem] bg-indigo-200/30 rounded-full blur-3xl z-0"
+        animate={{ scale: [1, 1.1, 1], rotate: [180, 360] }}
+        transition={{ duration: 12, repeat: Infinity }}
+      />
+
+      <header className="relative z-10 text-center mb-12">
         <motion.div 
           className="mb-4 inline-flex items-center justify-center"
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
         >
-          <Globe size={46} className="text-blue-600  dark:text-blue-400" />
+          <Globe size={46} className="text-blue-600 dark:text-blue-400 drop-shadow-lg" />
         </motion.div>
         
         <motion.h1
-          className="text-4xl sm:text-5xl font-bold mb-3 bg-gradient-to-r dark:text-blue-400 from-blue-900 via-blue-700 to-blue-900 text-transparent bg-clip-text"
+          className="text-4xl sm:text-5xl font-extrabold mb-3 bg-gradient-to-r from-blue-900 via-blue-700 to-blue-900 text-transparent bg-clip-text drop-shadow-lg dark:text-blue-400"
           initial={{ y: -30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.1 }}
@@ -217,17 +229,19 @@ export const Destination=()=>{
         </motion.h1>
         
         <motion.p 
-          className="text-blue-600 dark:text-blue-500 text-lg max-w-2xl mx-auto"
+          className="text-blue-700 dark:text-blue-400 text-lg max-w-2xl mx-auto"
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          Discover amazing places from around the world and plan your next adventure
+          Discover breathtaking places, iconic landmarks, and hidden gems from around the world. <br />
+          <span className="font-semibold text-blue-500 dark:text-blue-300">Where will your next adventure take you?</span>
         </motion.p>
       </header>
 
+      {/* Region selector */}
       <motion.div 
-        className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12"
+        className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12 relative z-10"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
@@ -236,16 +250,16 @@ export const Destination=()=>{
           <motion.button
             key={region}
             onClick={() => setSelectedRegion(region)}
-            className={`px-5 py-2.5 rounded-full font-medium transition-all duration-300
+            className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-medium transition-all duration-300
               ${selectedRegion === region
-                ? "bg-blue-600 text-white border-2 border-blue-600 shadow-lg"
-                : "bg-white text-blue-600 border-2 border-blue-300 hover:border-blue-500 hover:bg-blue-50"
+                ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white border-2 border-blue-600 shadow-lg"
+                : "bg-white/90 backdrop-blur-sm text-blue-700 border-2 border-blue-200 hover:border-blue-400 hover:bg-blue-50"
               }`}
             whileHover={{ 
-              scale: 1.05,
-              boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)" 
+              scale: 1.08,
+              boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.12), 0 4px 6px -2px rgba(0, 0, 0, 0.08)" 
             }}
-            whileTap={{ scale: 0.95 }}
+            whileTap={{ scale: 0.96 }}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ 
@@ -254,13 +268,21 @@ export const Destination=()=>{
               stiffness: 80 
             }}
           >
+            <span>
+              {region === "Europe" && "🗺️"}
+              {region === "Asia" && "🏯"}
+              {region === "Americas" && "🌎"}
+              {region === "Africa" && "🦁"}
+              {region === "Oceania" && "🏝️"}
+            </span>
             {region}
           </motion.button>
         ))}
       </motion.div>
 
+      {/* Destinations grid */}
       <motion.div 
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
         variants={container}
         initial="hidden"
         animate="show"
@@ -268,28 +290,30 @@ export const Destination=()=>{
         {filteredDestinations.map((destination, index) => (
           <motion.div 
             key={destination.name}
-            className="rounded-xl overflow-hidden bg-white shadow-md relative group"
+            className="rounded-2xl overflow-hidden bg-white/90 dark:bg-indigo-100 shadow-xl border-2 border-blue-50 relative group transition-all"
             variants={item}
             whileHover={{ 
-              y: -8,
-              boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+              y: -10,
+              boxShadow: "0 20px 30px -5px rgba(0,0,0,0.13), 0 10px 10px -5px rgba(0,0,0,0.07)"
             }}
             transition={{ duration: 0.3 }}
           >
-            <div className="relative h-60 overflow-hidden">
+            <div className="relative h-64 overflow-hidden">
               <motion.img
                 src={destination.image}
                 alt={destination.name}
-                className="w-full h-full object-cover"
-                whileHover={{ scale: 1.05 }}
+                className="w-full h-full object-cover transition-all"
+                whileHover={{ scale: 1.08 }}
                 transition={{ duration: 0.5 }}
               />
               
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+              {/* Overlay gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
               
+              {/* Favorite button */}
               <motion.button
-                className={`absolute top-3 right-3 p-2 pr-4 rounded-full ${
-                  favorites.has(destination.name) ? 'bg-red-50/80' : 'bg-white/60'
+                className={`absolute top-3 right-3 p-2 pr-4 rounded-full shadow-lg transition-all ${
+                  favorites.has(destination.name) ? 'bg-red-100/80' : 'bg-white/70'
                 }`}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => toggleFavorite(destination.name)}
@@ -300,34 +324,54 @@ export const Destination=()=>{
                 />
               </motion.button>
               
-              <div className="absolute bottom-3 left-3 text-2xl">{destination.emoji}</div>
+              {/* Emoji badge (floating animation) */}
+              <motion.div
+                className="absolute bottom-3 left-3 text-3xl drop-shadow-lg"
+                animate={{ y: [0, -6, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                {destination.emoji}
+              </motion.div>
               
-              <div className="absolute bottom-3 right-3 bg-blue-600/90 text-white px-3 py-1 rounded-full text-sm flex items-center">
+              {/* Country badge */}
+              <div className="absolute bottom-3 right-3 bg-blue-600/90 text-white px-3 py-1 rounded-full text-sm flex items-center shadow">
                 <MapPin size={14} className="mr-1" />
                 {destination.country}
               </div>
             </div>
             
-            <div className="p-5">
-              <h2 className="text-xl font-bold text-gray-800 mb-2">{destination.name}</h2>
-              <p className="text-gray-600 mb-3">{destination.description}</p>
+            <div className="p-6">
+              <h2 className="text-2xl font-bold text-gray-800 mb-2">{destination.name}</h2>
+              <p className="text-gray-600 mb-4 italic">{destination.description}</p>
               
               <div className="flex justify-between items-center">
-                <span className="inline-block text-sm px-3 py-1 bg-blue-100 text-blue-700 rounded-full">
+                <span className="inline-block text-xs px-3 py-1 bg-blue-100 dark:bg-indigo-200 text-blue-700 rounded-full font-semibold">
                   {destination.region}
                 </span>
                 
                 <motion.button
-                  className="text-blue-600 font-medium text-sm flex items-center"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  className="text-blue-600 font-semibold text-sm flex items-center gap-1 hover:underline"
+                  whileHover={{ scale: 1.07 }}
+                  whileTap={{ scale: 0.97 }}
                 >
-                  Explore <span className="ml-1">→</span>
+                  Explore <span>→</span>
                 </motion.button>
               </div>
             </div>
           </motion.div>
         ))}
+      </motion.div>
+
+      {/* Call-to-action */}
+      <motion.div
+        className="relative z-10 mt-16 text-center"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.5 }}
+      >
+        <p className="text-lg text-blue-700 dark:text-blue-300 font-semibold">
+          🌏 Ready to add a new pin to your map? <span className="font-bold">Start planning your journey today!</span>
+        </p>
       </motion.div>
     </div>
   );

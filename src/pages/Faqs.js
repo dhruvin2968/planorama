@@ -56,7 +56,7 @@ export const FAQ = () => {
             <div key={index} className="mb-4">
               <button
                 onClick={() => toggleAccordion(index)}
-                className="w-full text-left bg-white p-4 rounded-lg shadow-md focus:outline-none focus:ring focus:ring-teal-300"
+                className="w-full text-left bg-white dark:bg-indigo-100 p-4 rounded-lg shadow-md focus:outline-none focus:ring focus:ring-teal-300"
               >
                 <div className="flex justify-between items-center">
                   <span className="text-lg font-semibold text-teal-800">{faq.question}</span>
@@ -64,7 +64,7 @@ export const FAQ = () => {
                 </div>
               </button>
               {openIndex === index && (
-                <div className="mt-2 bg-gray-50 p-4 rounded-lg text-gray-600 shadow-inner">
+                <div className="mt-2 bg-gray-50 dark:bg-indigo-50 p-4 rounded-lg text-gray-600 shadow-inner">
                   {faq.answer}
                 </div>
               )}
