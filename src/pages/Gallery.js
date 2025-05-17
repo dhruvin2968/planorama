@@ -61,18 +61,6 @@ export const Gallery = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
     >
-      {/* Animated background blobs */}
-      <motion.div
-        className="absolute -top-32 -left-32 w-96 h-96 bg-indigo-200/30 rounded-full blur-3xl z-0"
-        animate={{ scale: [1, 1.2, 1], rotate: [0, 180] }}
-        transition={{ duration: 10, repeat: Infinity }}
-      />
-      <motion.div
-        className="absolute -bottom-32 -right-32 w-[28rem] h-[28rem] bg-blue-200/30 rounded-full blur-3xl z-0"
-        animate={{ scale: [1, 1.1, 1], rotate: [180, 360] }}
-        transition={{ duration: 12, repeat: Infinity }}
-      />
-
       <motion.h1
         className="text-5xl font-extrabold text-center bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text dark:text-indigo-100 text-indigo-800 mb-12 drop-shadow-lg relative z-10"
         initial={{ y: -40, opacity: 0 }}

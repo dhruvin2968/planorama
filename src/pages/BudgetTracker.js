@@ -101,7 +101,7 @@ export const BudgetTracker = () => {
           <h2 className="text-md font-bold text-indigo-950 dark:text-black">
             Add New Expense
           </h2>
-          <div className="flex gap-4">
+          <div className="md:flex  gap-4">
             <input
               type="text"
               placeholder="Category"
@@ -127,7 +127,7 @@ export const BudgetTracker = () => {
               className="
               w-32 border rounded px-3 py-2
               border-gray-300 dark:border-indigo-700
-              focus:ring-2 focus:ring-indigo-400
+              focus:ring-2 focus:ring-indigo-400 md:my-2 my-0
               outline-none
               bg-white dark:bg-indigo-900
               text-gray-800 dark:text-indigo-100

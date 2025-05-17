@@ -9,13 +9,12 @@ h3 {
 }
 body {
   font-family: "Playfair", serif;
-
   margin-top: 0px;
 }
 body::-webkit-scrollbar {
   display: block;
-  width: 0px;
-  background-color: rgb(60, 21, 88);
+  width: 5px;
+  background-color: rgb(142, 19, 230);
 }
 body::-webkit-scrollbar-thumb {
   background-color: #000000;

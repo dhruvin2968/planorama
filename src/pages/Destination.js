@@ -197,18 +197,8 @@ export const Destination = () => {
   };
   const [modal, setModal] = useState(null);
   return (
-    <div className="relative min-h-screen bg-ingigo-100  from-blue-50 via-indigo-100 to-blue-200 dark:bg-black py-12 px-4 sm:px-6 lg:px-20 overflow-x-hidden">
-      {/* Animated background blobs */}
-      <motion.div
-        className="absolute -top-32 -left-32 w-96 h-96 bg-blue-300/30 rounded-full blur-3xl z-0"
-        animate={{ scale: [1, 1.2, 1], rotate: [0, 180] }}
-        transition={{ duration: 10, repeat: Infinity }}
-      />
-      <motion.div
-        className="absolute -bottom-32 -right-32 w-[28rem] h-[28rem] bg-indigo-300/30 rounded-full blur-3xl z-0"
-        animate={{ scale: [1, 1.1, 1], rotate: [180, 360] }}
-        transition={{ duration: 12, repeat: Infinity }}
-      />
+    <div className="relative min-h-screen bg-indigo-100   to-blue-200 dark:bg-black py-12 px-4 sm:px-6 lg:px-20 overflow-x-hidden">
+      
 
       <header className="relative z-10 text-center mb-12">
         <motion.div
