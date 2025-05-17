@@ -28,21 +28,20 @@ export const Contact = () => {
           id: auth.currentUser.uid,
         },
         timestamp: serverTimestamp(),
-        
       });
       Swal.fire({
-                title: "Message Sent Successfully",
-                icon: "success",
-                confirmButtonText: "Cool!",
-              });
+        title: "Message Sent Successfully",
+        icon: "success",
+        confirmButtonText: "Cool!",
+      });
 
       setForm({ name: "", email: "", message: "" }); // Reset form
     } catch (error) {
       Swal.fire({
-                title: "Please Try Again.",
-                icon: "error",
-                confirmButtonText: "Okay",
-              });
+        title: "Please Try Again.",
+        icon: "error",
+        confirmButtonText: "Okay",
+      });
     }
   };
 
@@ -50,13 +49,8 @@ export const Contact = () => {
     document.title = `Contact - Planorama`;
   }, []);
 
-
-
   return (
-    <div
-      className=" bg-indigo-100 dark:bg-gradient-to-br dark:from-indigo-900 dark:via-gray-900  dark:to-black w-full min-h-screen flex items-center justify-center  bg-cover bg-center"
-      
-    >
+    <div className=" bg-indigo-100 dark:bg-gradient-to-br dark:from-indigo-900 dark:via-gray-900  dark:to-black w-full min-h-screen flex items-center justify-center  bg-cover bg-center">
       <div className="bg-white  dark:bg-black dark:from-indigo-900 dark:via-gray-900  dark:to-black  bg-opacity-90 p-8 md:p-12 rounded-2xl shadow-lg max-w-3xl w-full">
         <h2 className="text-3xl font-bold dark:text-white text-gray-800 text-center mb-6">
           Get in Touch

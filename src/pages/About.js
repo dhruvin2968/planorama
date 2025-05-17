@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import {
   FaMapMarkedAlt,
   FaGlobe,
@@ -11,9 +12,11 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-
 export const AboutPage = () => {
-   const isAuth=  JSON.parse(localStorage.getItem("isAuth")) || false;
+  useEffect(() => {
+    document.title = `About - Planorama`;
+  }, []);
+  const isAuth = JSON.parse(localStorage.getItem("isAuth")) || false;
   const features = [
     {
       icon: FaGlobe,
@@ -22,7 +25,7 @@ export const AboutPage = () => {
       desc: "Filter and discover global locations with regional highlights and emojis.",
       link: "/destination",
     },
-    
+
     {
       icon: FaMoneyBillWave,
       iconClass: "text-pink-500",
@@ -42,15 +45,15 @@ export const AboutPage = () => {
       iconClass: "text-orange-500",
       title: "Download Your Itineraries",
       desc: "Easily export and access your saved travel plans anytime, anywhere.",
-      link: isAuth?"/mydashboard":"/itinerarygenerator",
+      link: isAuth ? "/mydashboard" : "/itinerarygenerator",
     },
     {
       icon: FaUsers,
-     iconClass: "text-pink-600",
-     title: "Live Chatbot Assistance 🤖",
-     desc: "Ask anything, anytime! Get instant travel suggestions, itinerary help or any help instantly",
-     link: "/",
-   },
+      iconClass: "text-pink-600",
+      title: "Live Chatbot Assistance 🤖",
+      desc: "Ask anything, anytime! Get instant travel suggestions, itinerary help or any help instantly",
+      link: "/",
+    },
 
     {
       icon: FaCalendarAlt,
@@ -80,14 +83,13 @@ export const AboutPage = () => {
       desc: "Generate useful phrases based on destination & travel type.",
       link: "/phrases",
     },
-   
-    
   ];
 
   return (
-    <div className="min-h-screen bg -indigo-100
-         dark:bgblack px-6 py-12 flex flex-col items-center">
-          
+    <div
+      className="min-h-screen bg -indigo-100
+         dark:bgblack px-6 py-12 flex flex-col items-center"
+    >
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -95,11 +97,12 @@ export const AboutPage = () => {
         className="text-center mb-10"
       >
         <h1 className="text-5xl font-extrabold text-blue-700 dark:text-white mb-4 tracking-tight">
-         Ablout Planorama 🚀
+          Ablout Planorama 🚀
         </h1>
         <p className="text-gray-700 dark:text-white max-w-3xl mx-auto text-lg">
-          Planorama is your all-in-one travel companion. From intelligent itinerary generation to detailed planning tools,
-          it helps you travel smarter, better, and beautifully.
+          Planorama is your all-in-one travel companion. From intelligent
+          itinerary generation to detailed planning tools, it helps you travel
+          smarter, better, and beautifully.
         </p>
       </motion.div>
 
@@ -112,8 +115,12 @@ export const AboutPage = () => {
                 whileHover={{ scale: 1.05 }}
                 className="bg-white dark:bg-indigo-100 rounded-2xl shadow-lg p-6 flex flex-col items-center text-center transition-all cursor-pointer"
               >
-                <Icon className={`${feature.iconClass}  dark:bg-indigo-100 text-5xl mb-4`} />
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">{feature.title}</h3>
+                <Icon
+                  className={`${feature.iconClass}  dark:bg-indigo-100 text-5xl mb-4`}
+                />
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  {feature.title}
+                </h3>
                 <p className="text-gray-600 text-sm">{feature.desc}</p>
               </motion.div>
             </Link>

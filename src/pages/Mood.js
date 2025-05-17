@@ -24,7 +24,9 @@ function Sticker({ sticker }) {
       className="flex flex-col items-center justify-center p-4 w-20 h-24 bg-white rounded-xl shadow-md cursor-grab hover:scale-110 hover:bg-blue-50 transition-transform duration-200 border border-blue-100"
     >
       <span className="text-4xl">{sticker.icon}</span>
-      <span className="text-xs text-blue-700 font-semibold mt-2">{sticker.label}</span>
+      <span className="text-xs text-blue-700 font-semibold mt-2">
+        {sticker.label}
+      </span>
     </div>
   );
 }
@@ -39,16 +41,22 @@ function PlacedSticker({ sticker, left, time, onRemove }) {
       title="Click to remove"
     >
       <div className="flex flex-col items-center">
-        <span className="text-3xl group-hover:scale-125 transition-transform">{sticker.icon}</span>
-        <span className="text-[11px] text-blue-700 font-medium">{sticker.label}</span>
-        <span className="text-[10px] text-cyan-500 font-semibold">{time}:00</span>
-        <span className="text-[9px] text-red-400 opacity-0 group-hover:opacity-100 transition-opacity">Remove</span>
+        <span className="text-3xl group-hover:scale-125 transition-transform">
+          {sticker.icon}
+        </span>
+        <span className="text-[11px] text-blue-700 font-medium">
+          {sticker.label}
+        </span>
+        <span className="text-[10px] text-cyan-500 font-semibold">
+          {time}:00
+        </span>
+        <span className="text-[9px] text-red-400 opacity-0 group-hover:opacity-100 transition-opacity">
+          Remove
+        </span>
       </div>
     </div>
   );
 }
-
-// Main Moodboard
 export const Moodboard = () => {
   const [placed, setPlaced] = useState([]);
   const boardRef = useRef(null);
@@ -73,11 +81,14 @@ export const Moodboard = () => {
   return (
     <div className="max-w-screen-2xl h-screen mx-auto mt-10 p-8 bg-Bluee rounded-3xl shadow-2xl border border-blue-100">
       <h2 className="text-4xl font-extrabold text-blue-700 mb-3 text-center tracking-tight drop-shadow">
-        <span role="img" aria-label="calendar" className="mr-2">📅</span>
+        <span role="img" aria-label="calendar" className="mr-2">
+          📅
+        </span>
         Visual Trip Moodboard
       </h2>
       <p className="text-center text-blue-500 mb-8 text-base">
-        Drag a sticker onto the timeline below. <br /> Click a sticker to remove it.
+        Drag a sticker onto the timeline below. <br /> Click a sticker to remove
+        it.
       </p>
 
       {/* Sticker Palette */}
@@ -109,7 +120,7 @@ export const Moodboard = () => {
               opacity: i % 2 === 0 ? 1 : 0.45,
             }}
           >
-            {i*2}:00
+            {i * 2}:00
           </div>
         ))}
 
@@ -128,10 +139,8 @@ export const Moodboard = () => {
   );
 };
 
-// Export wrapped with DndProvider
 export const Mood = () => (
   <DndProvider backend={HTML5Backend}>
     <Moodboard />
   </DndProvider>
 );
-

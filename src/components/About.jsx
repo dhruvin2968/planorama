@@ -18,12 +18,11 @@ const AboutComponent = () => {
       desc: "Filter and discover global locations with regional highlights and emojis.",
       link: "/destination",
     },
-    
-    
+
     {
       icon: FaMapMarkedAlt,
       iconClass: "text-blue-500",
-      title: "AI Itinerary Generator",
+      title: "Generate Itinerary using AI",
       desc: "Create personalized, intelligent trip plans powered by GROQ AI.",
       link: "/itinerarygenerator",
     },
@@ -34,8 +33,7 @@ const AboutComponent = () => {
       desc: "Visual countdown with a daily notes planner for your entire trip.",
       link: "/planner",
     },
-    
-    
+
     {
       icon: FaMoneyBillWave,
       iconClass: "text-rose-500",
@@ -51,19 +49,19 @@ const AboutComponent = () => {
       link: "/phrases",
     },
     {
-   icon: FaUsers,
-  iconClass: "text-pink-600",
-  title: "Live Chatbot Assistance 🤖",
-  desc: "Ask anything, anytime! Get instant travel suggestions, itinerary help or any help instantly",
-  link: "/",
-}
-    
+      icon: FaUsers,
+      iconClass: "text-pink-600",
+      title: "Live Chatbot Assistance 🤖",
+      desc: "Ask anything, anytime! Get instant travel suggestions, itinerary help or any help instantly",
+      link: "/",
+    },
   ];
 
   return (
-    <div className="min-h-screen bg-indigo-100 from-indigo-100 via-indigo-200 to-indigo-100
-         dark:bg-black px-6 py-12 flex flex-col items-center">
-          
+    <div
+      className="min-h-screen bg-indigo-100 from-indigo-100 via-indigo-200 to-indigo-100
+         dark:bg-black px-6 py-12 flex flex-col items-center"
+    >
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -74,8 +72,9 @@ const AboutComponent = () => {
           What Would You Like To Do? 🚀
         </h1>
         <p className="text-gray-700 dark:text-white max-w-3xl mx-auto text-lg">
-          Planorama is your all-in-one travel companion. From intelligent itinerary generation to detailed planning tools,
-          it helps you travel smarter, better, and beautifully.
+          Planorama is your all-in-one travel companion. From intelligent
+          itinerary generation to detailed planning tools, it helps you travel
+          smarter, better, and beautifully.
         </p>
       </motion.div>
 
@@ -89,7 +88,9 @@ const AboutComponent = () => {
                 className=" bg-gray-50 dark:bg-indigo-100 rounded-2xl shadow-lg p-6 flex flex-col items-center text-center transition-all cursor-pointer"
               >
                 <Icon className={`${feature.iconClass} text-5xl mb-4`} />
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">{feature.title}</h3>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  {feature.title}
+                </h3>
                 <p className="text-gray-600 text-sm">{feature.desc}</p>
               </motion.div>
             </Link>

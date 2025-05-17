@@ -5,7 +5,7 @@ const currencyRates = {
   USD: 1,
   EUR: 0.93,
   INR: 83.2,
-  GBP: 0.80,
+  GBP: 0.8,
   JPY: 155.45,
   AUD: 1.5,
   CAD: 1.35,

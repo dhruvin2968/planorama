@@ -4,7 +4,7 @@ const BgImg= () => {
   return (
     <div className="absolute right-0 top-0 h-full">
       <img
-        src="/nature.jpg" // Replace with the path to your image
+        src="/nature.jpg" 
         alt="Background"
         className=" h-screen rounded-l-full object-cover relative right-0 "
       />

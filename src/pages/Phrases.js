@@ -1,50 +1,170 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-const travelTypes = ["Adventure", "Business", "Romantic", "Cultural", "Family", "Solo", "Luxury"];
+const travelTypes = [
+  "Adventure",
+  "Business",
+  "Romantic",
+  "Cultural",
+  "Family",
+  "Solo",
+  "Luxury",
+];
 
 const phrasesByType = {
   Adventure: [
-    { phrase: "Where can I rent a bike?", emoji: "🚲", tip: "Look for bike-sharing stations" },
-    { phrase: "Is this trail safe?", emoji: "🧗‍♂️", tip: "Check local hiking forums" },
-    { phrase: "Do I need a guide?", emoji: "🧭", tip: "Recommended for remote areas" },
-    { phrase: "Best spot for sunrise?", emoji: "🌄", tip: "Ask local photographers" },
+    {
+      phrase: "Where can I rent a bike?",
+      emoji: "🚲",
+      tip: "Look for bike-sharing stations",
+    },
+    {
+      phrase: "Is this trail safe?",
+      emoji: "🧗‍♂️",
+      tip: "Check local hiking forums",
+    },
+    {
+      phrase: "Do I need a guide?",
+      emoji: "🧭",
+      tip: "Recommended for remote areas",
+    },
+    {
+      phrase: "Best spot for sunrise?",
+      emoji: "🌄",
+      tip: "Ask local photographers",
+    },
   ],
   Business: [
-    { phrase: "Where is the nearest Wi-Fi?", emoji: "💼", tip: "Coffee shops often have free WiFi" },
-    { phrase: "Can we schedule a meeting?", emoji: "📅", tip: "Confirm time zones first" },
-    { phrase: "Is there a co-working space?", emoji: "🏢", tip: "Check coworker.com listings" },
-    { phrase: "Where's the business center?", emoji: "💻", tip: "Most hotels have one" },
+    {
+      phrase: "Where is the nearest Wi-Fi?",
+      emoji: "💼",
+      tip: "Coffee shops often have free WiFi",
+    },
+    {
+      phrase: "Can we schedule a meeting?",
+      emoji: "📅",
+      tip: "Confirm time zones first",
+    },
+    {
+      phrase: "Is there a co-working space?",
+      emoji: "🏢",
+      tip: "Check coworker.com listings",
+    },
+    {
+      phrase: "Where's the business center?",
+      emoji: "💻",
+      tip: "Most hotels have one",
+    },
   ],
   Romantic: [
-    { phrase: "This place is beautiful!", emoji: "❤️", tip: "Perfect for proposals!" },
-    { phrase: "Can you take a picture of us?", emoji: "📸", tip: "Offer to take theirs first" },
-    { phrase: "Where’s a romantic dinner spot?", emoji: "🍷", tip: "Rooftop restaurants recommended" },
-    { phrase: "Best couple's activity?", emoji: "💑", tip: "Try a cooking class together" },
+    {
+      phrase: "This place is beautiful!",
+      emoji: "❤️",
+      tip: "Perfect for proposals!",
+    },
+    {
+      phrase: "Can you take a picture of us?",
+      emoji: "📸",
+      tip: "Offer to take theirs first",
+    },
+    {
+      phrase: "Where’s a romantic dinner spot?",
+      emoji: "🍷",
+      tip: "Rooftop restaurants recommended",
+    },
+    {
+      phrase: "Best couple's activity?",
+      emoji: "💑",
+      tip: "Try a cooking class together",
+    },
   ],
   Cultural: [
-    { phrase: "Is there a local market?", emoji: "🧺", tip: "Go early for fresh produce" },
-    { phrase: "Where’s the museum?", emoji: "🏛️", tip: "Free days often available" },
-    { phrase: "Tell me about this tradition.", emoji: "🗿", tip: "Locals love sharing stories" },
-    { phrase: "Traditional dish to try?", emoji: "🍲", tip: "Ask for street food recommendations" },
+    {
+      phrase: "Is there a local market?",
+      emoji: "🧺",
+      tip: "Go early for fresh produce",
+    },
+    {
+      phrase: "Where’s the museum?",
+      emoji: "🏛️",
+      tip: "Free days often available",
+    },
+    {
+      phrase: "Tell me about this tradition.",
+      emoji: "🗿",
+      tip: "Locals love sharing stories",
+    },
+    {
+      phrase: "Traditional dish to try?",
+      emoji: "🍲",
+      tip: "Ask for street food recommendations",
+    },
   ],
   Family: [
-    { phrase: "Where’s the kids’ area?", emoji: "🧒", tip: "Look for playground symbols" },
-    { phrase: "Can I get a family discount?", emoji: "🎟️", tip: "Always ask about deals" },
-    { phrase: "Do you have a high chair?", emoji: "🪑", tip: "Call restaurants ahead" },
-    { phrase: "Child-friendly activities?", emoji: "🎠", tip: "Zoos and aquariums are great" },
+    {
+      phrase: "Where’s the kids’ area?",
+      emoji: "🧒",
+      tip: "Look for playground symbols",
+    },
+    {
+      phrase: "Can I get a family discount?",
+      emoji: "🎟️",
+      tip: "Always ask about deals",
+    },
+    {
+      phrase: "Do you have a high chair?",
+      emoji: "🪑",
+      tip: "Call restaurants ahead",
+    },
+    {
+      phrase: "Child-friendly activities?",
+      emoji: "🎠",
+      tip: "Zoos and aquariums are great",
+    },
   ],
   Solo: [
-    { phrase: "Safe areas to explore?", emoji: "🛡️", tip: "Talk to hostel staff" },
-    { phrase: "Best way to meet people?", emoji: "👋", tip: "Join free walking tours" },
-    { phrase: "Affordable single rooms?", emoji: "🚪", tip: "Check guesthouse reviews" },
-    { phrase: "Good selfie spots?", emoji: "🤳", tip: "Look for iconic landmarks" },
+    {
+      phrase: "Safe areas to explore?",
+      emoji: "🛡️",
+      tip: "Talk to hostel staff",
+    },
+    {
+      phrase: "Best way to meet people?",
+      emoji: "👋",
+      tip: "Join free walking tours",
+    },
+    {
+      phrase: "Affordable single rooms?",
+      emoji: "🚪",
+      tip: "Check guesthouse reviews",
+    },
+    {
+      phrase: "Good selfie spots?",
+      emoji: "🤳",
+      tip: "Look for iconic landmarks",
+    },
   ],
   Luxury: [
-    { phrase: "Champagne service available?", emoji: "🍾", tip: "5-star hotels best bet" },
-    { phrase: "Private tour options?", emoji: "👑", tip: "Concierge can arrange" },
-    { phrase: "Luxury spa services?", emoji: "💆", tip: "Book treatments in advance" },
-    { phrase: "VIP airport transfer?", emoji: "✈️", tip: "Arrange through your hotel" },
+    {
+      phrase: "Champagne service available?",
+      emoji: "🍾",
+      tip: "5-star hotels best bet",
+    },
+    {
+      phrase: "Private tour options?",
+      emoji: "👑",
+      tip: "Concierge can arrange",
+    },
+    {
+      phrase: "Luxury spa services?",
+      emoji: "💆",
+      tip: "Book treatments in advance",
+    },
+    {
+      phrase: "VIP airport transfer?",
+      emoji: "✈️",
+      tip: "Arrange through your hotel",
+    },
   ],
 };
 
@@ -75,9 +195,10 @@ export const Phrases = () => {
         initial={{ y: -40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
       >
-       Travel Phrasebook 🌍
+        Travel Phrasebook 🌍
         <p className="text-lg font-medium text-gray-600 dark:text-gray-100 mt-4 max-w-2xl mx-auto">
-          Never get stuck abroad! Essential phrases for every traveler, with local tips and cultural notes.
+          Never get stuck abroad! Essential phrases for every traveler, with
+          local tips and cultural notes.
         </p>
       </motion.h1>
 
@@ -123,8 +244,10 @@ export const Phrases = () => {
             >
               {item.emoji}
             </motion.div>
-            <p className="text-lg font-semibold text-gray-800 mb-3">{item.phrase}</p>
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 to-teal-400"/>
+            <p className="text-lg font-semibold text-gray-800 mb-3">
+              {item.phrase}
+            </p>
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 to-teal-400" />
             <div className="mt-4 p-3 bg-blue-50/50 rounded-lg">
               <p className="text-sm text-blue-600 font-medium">💡 {item.tip}</p>
             </div>
@@ -137,7 +260,8 @@ export const Phrases = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
-        🎉 Pro Tip: Practice these phrases before your trip and watch locals light up!
+        🎉 Pro Tip: Practice these phrases before your trip and watch locals
+        light up!
       </motion.div>
     </motion.div>
   );

@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
 const Beach = () => {
   return (
     <div className="">
       <img
-        src="/beach3.jpg" // Replace with the path to your image
+        src="/beach3.jpg" 
         alt="Background"
         className="w-full rounded-br-full object-cover md:h-auto h-screen relative leftright-0"
       />

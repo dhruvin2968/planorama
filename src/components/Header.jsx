@@ -4,11 +4,11 @@ import { signInWithPopup, signOut } from "firebase/auth";
 import { useState } from "react";
 import Swal from "sweetalert2";
 import Logo from "./finallogo.png";
-import { motion, AnimatePresence } from 'framer-motion';
-import {  useLocation } from 'react-router-dom';
-import { Menu, X, Compass, LogIn, LogOut } from 'lucide-react';
+import { motion, AnimatePresence } from "framer-motion";
+import { useLocation } from "react-router-dom";
+import { Menu, X, Compass, LogIn, LogOut } from "lucide-react";
 import { Moon, Sun } from "lucide-react";
-import {  useEffect } from "react";
+import { useEffect } from "react";
 
 export const Header = () => {
   const [isAuth, setIsAuth] = useState(
@@ -48,8 +48,6 @@ export const Header = () => {
     });
   }
 
-  
-
   const navItems = [
     { path: "/", label: "Home", icon: Compass },
     { path: "/about", label: "About" },
@@ -60,13 +58,17 @@ export const Header = () => {
 
   const navLinkClasses = (isActive) =>
     `relative px-4 py-2 text-md font-medium transition-colors duration-200
-    ${isActive ? '<text-blue-5></text-blue-5>00' : 'text-gray-700 dark:text-white hover:text-blue-600'}`;
+    ${
+      isActive
+        ? "<text-blue-5></text-blue-5>00"
+        : "text-gray-700 dark:text-white hover:text-blue-600"
+    }`;
 
-  
-
-   const location = useLocation();
+  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(() => localStorage.getItem("theme") === "dark");
+  const [darkMode, setDarkMode] = useState(
+    () => localStorage.getItem("theme") === "dark"
+  );
 
   useEffect(() => {
     if (darkMode) {
@@ -99,13 +101,19 @@ export const Header = () => {
                 transition={{ duration: 0.7 }}
                 className="text-blue-600"
               >
-                <img src={Logo} className="h-10 dark:bg-white/80 rounded-xl" alt="PlanOrama Logo" />
+                <img
+                  src={Logo}
+                  className="h-10 dark:bg-white/80 rounded-xl"
+                  alt="PlanOrama Logo"
+                />
               </motion.div>
               <div className="flex flex-col">
                 <span className="text-2xl font-bold bg-gradient-to-r from-blue-900 to-blue-800 bg-clip-text text-transparent dark:text-white">
                   Planorama
                 </span>
-                <span className="text-sm text-gray-800 dark:text-gray-300">Explore. Dream. Discover.</span>
+                <span className="text-sm text-gray-800 dark:text-gray-300">
+                  Explore. Dream. Discover.
+                </span>
               </div>
             </Link>
           </motion.div>
@@ -144,13 +152,15 @@ export const Header = () => {
               whileTap={{ scale: 0.95 }}
               onClick={isAuth ? handleLogout : handleLogin}
               className={`ml-4 px-6 py-2 rounded-full font-medium transition-colors duration-200
-                ${isAuth 
-                  ? 'bg-red-50 text-red-600 hover:bg-red-100' 
-                  : 'bg-blue-600 text-white hover:bg-blue-700'}`}
+                ${
+                  isAuth
+                    ? "bg-red-50 text-red-600 hover:bg-red-100"
+                    : "bg-blue-600 text-white hover:bg-blue-700"
+                }`}
             >
               <span className="flex items-center space-x-2">
                 {isAuth ? <LogOut size={18} /> : <LogIn size={18} />}
-                <span>{isAuth ? 'Logout' : 'Login'}</span>
+                <span>{isAuth ? "Logout" : "Login"}</span>
               </span>
             </motion.button>
           </div>
@@ -180,9 +190,11 @@ export const Header = () => {
                     onClick={() => setIsMenuOpen(false)}
                     className={({ isActive }) =>
                       `px-4 py-2 rounded-lg transition-colors duration-200
-                      ${isActive 
-                        ? 'bg-blue-50 text-blue-600 dark:bg-gray-700 dark:text-white' 
-                        : 'text-gray-700 hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-gray-800'}`
+                      ${
+                        isActive
+                          ? "bg-blue-50 text-blue-600 dark:bg-gray-700 dark:text-white"
+                          : "text-gray-700 hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-gray-800"
+                      }`
                     }
                   >
                     {label}
@@ -206,13 +218,15 @@ export const Header = () => {
                     setIsMenuOpen(false);
                   }}
                   className={`px-4 py-2 rounded-lg font-medium text-left transition-colors duration-200
-                    ${isAuth 
-                      ? 'bg-red-50 text-red-600' 
-                      : 'bg-blue-600 text-white'}`}
+                    ${
+                      isAuth
+                        ? "bg-red-50 text-red-600"
+                        : "bg-blue-600 text-white"
+                    }`}
                 >
                   <span className="flex items-center space-x-2">
                     {isAuth ? <LogOut size={18} /> : <LogIn size={18} />}
-                    <span>{isAuth ? 'Logout' : 'Login'}</span>
+                    <span>{isAuth ? "Logout" : "Login"}</span>
                   </span>
                 </motion.button>
               </div>

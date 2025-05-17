@@ -1,52 +1,49 @@
 .App {
   text-align: center;
 }
-h1,h2,h3
-{
+h1,
+h2,
+h3 {
   font-family: "Playfair", serif;
   font-weight: 1000;
 }
-body
-{
+body {
   font-family: "Playfair", serif;
 
   margin-top: 0px;
 }
-body::-webkit-scrollbar
-{
-    display:block;
-    width:6px;
-    background-color: rgb(20, 231, 255);
+body::-webkit-scrollbar {
+  display: block;
+  width: 0px;
+  background-color: rgb(60, 21, 88);
 }
-body::-webkit-scrollbar-thumb
-{
-    background-color: #0b006d;
-    border-radius: 100px;
+body::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border-radius: 100px;
 }
 nav a {
   pointer-events: auto;
 }
 /* Card Component */
-.card{
+.card {
   border-radius: 5px;
   padding: 10px;
   box-shadow: #cbc9c9 0px 1px 4px;
   margin: 20px 5px;
-  color:#001532;
-  
+  color: #001532;
 }
 
-.card .title{
+.card .title {
   font-size: 20px;
   margin: 20px 5px;
   font-weight: 600;
-  color:#001e47
+  color: #001e47;
 }
 
-.card .description{
+.card .description {
   font-size: 16px;
   margin: 20px 5px;
-  color:#001532
+  color: #001532;
 }
 
 .card .control {

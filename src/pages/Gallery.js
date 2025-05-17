@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {  X } from "lucide-react";
+import { X } from "lucide-react";
 
 const galleryImages = [
   {
@@ -78,12 +78,13 @@ export const Gallery = () => {
         initial={{ y: -40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
       >
-        Travel Gallery <span role="img" aria-label="camera">📸</span>
+        Travel Gallery{" "}
+        <span role="img" aria-label="camera">
+          📸
+        </span>
       </motion.h1>
 
-      <motion.div
-        className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
-      >
+      <motion.div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {galleryImages.map((img, idx) => (
           <motion.div
             key={img.title}
@@ -92,7 +93,10 @@ export const Gallery = () => {
             initial="hidden"
             animate="visible"
             custom={idx}
-            whileHover={{ scale: 1.04, boxShadow: "0 12px 24px -6px rgba(236,72,153,0.18)" }}
+            whileHover={{
+              scale: 1.04,
+              boxShadow: "0 12px 24px -6px rgba(236,72,153,0.18)",
+            }}
             onClick={() => setSelectedImg(img)}
           >
             <img
@@ -107,12 +111,17 @@ export const Gallery = () => {
               animate={false}
             >
               <div className="p-4">
-                <div className="text-white text-lg font-bold mb-1">{img.title}</div>
+                <div className="text-white text-lg font-bold mb-1">
+                  {img.title}
+                </div>
                 <div className="text-indigo-100 text-sm mb-2">{img.phrase}</div>
                 <motion.button
                   className="bg-white/80 text-indigo-700 font-semibold rounded-full px-5 py-1 shadow hover:bg-indigo-100 transition"
                   whileHover={{ scale: 1.1 }}
-                  onClick={(e) => { e.stopPropagation(); setSelectedImg(img); }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSelectedImg(img);
+                  }}
                 >
                   View
                 </motion.button>
@@ -178,7 +187,8 @@ export const Gallery = () => {
         transition={{ duration: 0.7, delay: 0.5 }}
       >
         <p className="text-lg text-indigo-600 font-semibold">
-          ✨ Click any photo to see it in full glory and get inspired for your next adventure!
+          ✨ Click any photo to see it in full glory and get inspired for your
+          next adventure!
         </p>
       </motion.div>
     </motion.div>

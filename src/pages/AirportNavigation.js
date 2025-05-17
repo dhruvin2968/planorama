@@ -4,22 +4,64 @@ import { motion, AnimatePresence } from "framer-motion";
 // Sample data for gates and flights
 const GATES = ["A1", "A2", "B1", "B2", "C1", "C2"];
 const FLIGHTS = [
-  { id: 1, flight: "AI 202", destination: "New Delhi", gate: "A1", time: "10:30", status: "On Time" },
-  { id: 2, flight: "BA 101", destination: "London", gate: "A2", time: "11:15", status: "Delayed" },
-  { id: 3, flight: "LH 303", destination: "Frankfurt", gate: "B1", time: "12:00", status: "Boarding" },
-  { id: 4, flight: "UA 404", destination: "San Francisco", gate: "B2", time: "12:45", status: "On Time" },
-  { id: 5, flight: "SQ 505", destination: "Singapore", gate: "C1", time: "13:30", status: "On Time" },
-  { id: 6, flight: "EK 606", destination: "Dubai", gate: "C2", time: "14:10", status: "Cancelled" },
+  {
+    id: 1,
+    flight: "AI 202",
+    destination: "New Delhi",
+    gate: "A1",
+    time: "10:30",
+    status: "On Time",
+  },
+  {
+    id: 2,
+    flight: "BA 101",
+    destination: "London",
+    gate: "A2",
+    time: "11:15",
+    status: "Delayed",
+  },
+  {
+    id: 3,
+    flight: "LH 303",
+    destination: "Frankfurt",
+    gate: "B1",
+    time: "12:00",
+    status: "Boarding",
+  },
+  {
+    id: 4,
+    flight: "UA 404",
+    destination: "San Francisco",
+    gate: "B2",
+    time: "12:45",
+    status: "On Time",
+  },
+  {
+    id: 5,
+    flight: "SQ 505",
+    destination: "Singapore",
+    gate: "C1",
+    time: "13:30",
+    status: "On Time",
+  },
+  {
+    id: 6,
+    flight: "EK 606",
+    destination: "Dubai",
+    gate: "C2",
+    time: "14:10",
+    status: "Cancelled",
+  },
 ];
 
 const statusColors = {
   "On Time": "text-green-600",
-  "Delayed": "text-yellow-600",
-  "Boarding": "text-blue-600",
-  "Cancelled": "text-red-600",
+  Delayed: "text-yellow-600",
+  Boarding: "text-blue-600",
+  Cancelled: "text-red-600",
 };
 
-export const AirportNavigation=()=> {
+export const AirportNavigation = () => {
   const [selectedGate, setSelectedGate] = useState("All");
 
   const filteredFlights =
@@ -38,9 +80,11 @@ export const AirportNavigation=()=> {
         <button
           onClick={() => setSelectedGate("All")}
           className={`px-5 py-2 rounded-full font-semibold transition 
-            ${selectedGate === "All"
-              ? "bg-indigo-600 text-white shadow-lg"
-              : "bg-white text-indigo-600 border border-indigo-200 hover:bg-indigo-100"}
+            ${
+              selectedGate === "All"
+                ? "bg-indigo-600 text-white shadow-lg"
+                : "bg-white text-indigo-600 border border-indigo-200 hover:bg-indigo-100"
+            }
           `}
         >
           All Gates
@@ -50,9 +94,11 @@ export const AirportNavigation=()=> {
             key={gate}
             onClick={() => setSelectedGate(gate)}
             className={`px-5 py-2 rounded-full font-semibold transition 
-              ${selectedGate === gate
-                ? "bg-indigo-600 text-white shadow-lg"
-                : "bg-white text-indigo-600 border border-indigo-200 hover:bg-indigo-100"}
+              ${
+                selectedGate === gate
+                  ? "bg-indigo-600 text-white shadow-lg"
+                  : "bg-white text-indigo-600 border border-indigo-200 hover:bg-indigo-100"
+              }
             `}
           >
             Gate {gate}
@@ -108,4 +154,4 @@ export const AirportNavigation=()=> {
       </div>
     </div>
   );
-}
+};

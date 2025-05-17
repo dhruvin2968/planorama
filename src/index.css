@@ -5,16 +5,13 @@
   .letter-border {
     -webkit-text-stroke: 3px #000;
     text-stroke: 3px #000; /* For supported browsers */
-   color:white /* Optional: makes the inside color transparent */
-   
+    color: white; /* Optional: makes the inside color transparent */
   }
 }
 
 body {
   margin: 0;
 }
-
-
 
 button {
   cursor: pointer;
@@ -27,8 +24,6 @@ button {
   align-items: center;
   font-size: 15px;
 }
-
-
 
 button > svg {
   width: 34px;
@@ -56,7 +51,7 @@ button:active {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: #6D4FC2;
+  background: #6d4fc2;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease;
 }
@@ -99,7 +94,7 @@ button:active {
   display: flex;
   padding: 15px 22px;
   align-items: center;
-  background: #6D4FC2;
+  background: #6d4fc2;
   justify-content: space-between;
 }
 .chat-header .header-info {
@@ -112,7 +107,7 @@ button:active {
   height: 35px;
   flex-shrink: 0;
   padding: 6px;
-  fill: #6D4FC2;
+  fill: #6d4fc2;
   background: #fff;
   border-radius: 50%;
 }
@@ -147,7 +142,7 @@ button:active {
   margin-bottom: 82px;
   padding: 25px 22px;
   scrollbar-width: thin;
-  scrollbar-color: #DDD3F9 transparent;
+  scrollbar-color: #ddd3f9 transparent;
 }
 .chat-body .message {
   display: flex;
@@ -162,7 +157,7 @@ button:active {
   fill: #fff;
   align-self: flex-end;
   margin-bottom: 2px;
-  background: #6D4FC2;
+  background: #6d4fc2;
   border-radius: 50%;
 }
 .chat-body .message .message-text {
@@ -176,7 +171,7 @@ button:active {
   color: #ff0000;
 }
 .chat-body .bot-message .message-text {
-  background: #F6F2FF;
+  background: #f6f2ff;
   border-radius: 13px 13px 13px 3px;
 }
 .chat-body .user-message {
@@ -185,7 +180,7 @@ button:active {
 }
 .chat-body .user-message .message-text {
   color: #fff;
-  background: #6D4FC2;
+  background: #6d4fc2;
   border-radius: 13px 13px 3px 13px;
 }
 .chat-footer {
@@ -201,11 +196,11 @@ button:active {
   position: relative;
   background: #fff;
   border-radius: 32px;
-  outline: 1px solid #CCCCE5;
+  outline: 1px solid #cccce5;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.06);
 }
 .chat-form:focus-within {
-  outline: 2px solid #6D4FC2;
+  outline: 2px solid #6d4fc2;
 }
 .chat-form .message-input {
   width: 100%;
@@ -225,12 +220,12 @@ button:active {
   cursor: pointer;
   display: none;
   margin-right: 6px;
-  background: #6D4FC2;
+  background: #6d4fc2;
   border-radius: 50%;
   font-size: 1.15rem;
   transition: 0.2s ease;
 }
-.chat-form .message-input:valid~#send-message {
+.chat-form .message-input:valid ~ #send-message {
   display: block;
 }
 .chat-form #send-message:hover {
@@ -286,7 +281,7 @@ button:active {
   font-size: 24px;
   height: 50px;
   margin-top: 10px;
-  
+
   position: relative;
   overflow: hidden;
 }
@@ -298,7 +293,12 @@ button:active {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
   animation: shine 1.5s infinite;
 }
 
@@ -330,7 +330,8 @@ button:active {
 }
 
 @keyframes blink {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0;
   }
   50% {

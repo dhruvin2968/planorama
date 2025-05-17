@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import BgImg from "./BgImg2";
+import BgImg from "./BgImg";
 import { TripSurvey } from "./TripSurvey";
 import { SurpriseMe } from "./SurpriseMe";
 
@@ -12,7 +12,9 @@ export const ThemeSelector = () => {
       <BgImg />
       {!showThemes && !showSurprise && (
         <div className="absolute flex flex-col items-center justify-center z-10 text-center">
-          <h1 className="text-6xl font-black mb-10 text-white">What's your mood?</h1>
+          <h1 className="text-6xl font-black mb-10 text-white">
+            What's your mood?
+          </h1>
           <div className="space-y-6">
             <button
               onClick={() => setShowThemes(true)}
@@ -31,7 +33,9 @@ export const ThemeSelector = () => {
       )}
 
       {showThemes && <TripSurvey setShowThemes={setShowThemes} />}
-      {showSurprise && <SurpriseMe show={showSurprise} setShow={setShowSurprise} />}
+      {showSurprise && (
+        <SurpriseMe show={showSurprise} setShow={setShowSurprise} />
+      )}
     </div>
   );
 };

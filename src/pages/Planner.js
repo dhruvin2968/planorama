@@ -31,7 +31,7 @@ export const Planner = () => {
           <textarea
             className="w-full h-32 p-4 rounded-lg border-2 border-teal-100 focus:outline-none focus:ring-4 focus:ring-teal-300/50 resize-none bg-white/50 backdrop-blur-sm"
             placeholder={`✈️ Plan for Day ${i}...`}
-            value={notes[i] || ""} 
+            value={notes[i] || ""}
             onChange={(e) => handleNoteChange(i, e.target.value)}
           />
         </motion.div>
