@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ScrollToTop } from './components/ScrollToTop';
 function App() {
  return (   
-   <div className="bg-Bluee dark:bg-gray-950">
+   <div className="bg-indigo-100 dark:bg-black">
      <BrowserRouter>
      <ScrollToTop />
      <Header/>

@@ -20,7 +20,7 @@ export const Home = () => {
 
   return (
     <>
-    <div className="min-h-screen">
+    <div className="min-h-screen ">
       <Beach/>
       {/* Hero Section */}
       <main className="">
@@ -94,11 +94,11 @@ export const Home = () => {
      
       </div>
       {/* Theme Selector Section */}
-      <div id="theme-selector">
+      <div >
       
        
        
-        <div className="border rounded-bl-full p-4 flex items-center justify-center">
+        <div >
           <Chatbot />
         </div>
       </div>

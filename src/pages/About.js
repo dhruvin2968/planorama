@@ -34,7 +34,7 @@ export const AboutPage = () => {
       iconClass: "text-blue-500",
       title: "AI Itinerary Generator",
       desc: "Create personalized, intelligent trip plans powered by GROQ AI.",
-      link: "/",
+      link: "/itinerarygenerator",
     },
     {
       icon: FaUsers,
@@ -84,7 +84,8 @@ export const AboutPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-Bluee dark:bg-black px-6 py-12 flex flex-col items-center">
+    <div className="min-h-screen bg -indigo-100
+         dark:bgblack px-6 py-12 flex flex-col items-center">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}

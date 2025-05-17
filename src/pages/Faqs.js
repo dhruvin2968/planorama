@@ -8,46 +8,38 @@ export const FAQ = () => {
   };
 
   const faqs = [
-    {
-      question: "What is Planorama?",
-      answer: "Planorama is an AI-powered travel planner that helps you generate personalized itineraries, manage trips, and get real-time travel insights through an interactive chatbot."
-    },
-    {
-      question: "How do I create a travel itinerary?",
-      answer: "Simply enter your destination, travel dates, and preferences, and Planorama will generate a customized itinerary for you."
-    },
-    {
-      question: "Can I save and access my itineraries later?",
-      answer: "Yes, your itineraries are stored in your account, allowing you to view and manage them anytime."
-    },
-    {
-      question: "Does Planorama have a chatbot?",
-      answer: "Yes! Planorama includes a smart chatbot that provides travel recommendations and answers your trip-related questions."
-    },
-    {
-      question: "Is my data safe with Planorama?",
-      answer: "Absolutely! We prioritize user privacy and security, ensuring your travel data remains protected."
-    },
-    {
-      question: "Can I customize my itinerary?",
-      answer: "Yes, you can edit and personalize your itinerary based on your preferences."
-    },
-    {
-      question: "Does Planorama work on mobile devices?",
-      answer: "Yes, Planorama is a fully responsive web application that works seamlessly on both desktop and mobile browsers."
-    },
-    {
-      question: "Does Planorama support multiple languages?",
-      answer: "Currently, Planorama is available in English. We plan to introduce multi-language support in the future."
-    },
-    {
-      question: "Are there any hidden charges?",
-      answer: "No, Planorama is completely free to use with no hidden fees."
-    },
-    {
-      question: "Does Planorama support group travel planning?",
-      answer: "Currently, Planorama is designed for individual travelers. Group planning features may be added in future updates."
-    }
+  {
+    question: "What is Planorama?",
+    answer: "Planorama is your ultimate travel toolkit—packed with powerful planning tools to help you travel smarter, better, and beautifully."
+  },
+  {
+    question: "How can I explore destinations?",
+    answer: "Use the 'Explore Destinations 🌍' tool to filter and discover global locations with regional highlights, images, and fun emojis."
+  },
+  {
+    question: "What is the AI Itinerary Generator?",
+    answer: "It's an intelligent tool powered by GROQ AI that creates customized, day-wise travel plans based on your preferences."
+  },
+  {
+    question: "How does the chatbot work?",
+    answer: "Our Live Chatbot 🤖 assists you instantly with travel suggestions, itinerary updates, and any trip-related help you need—24/7."
+  },
+  {
+    question: "Can I track my trip progress?",
+    answer: "Yes! The Trip Countdown + Planner 📅 gives you a visual countdown and lets you jot daily notes to keep everything organized."
+  },
+  {
+    question: "How can I manage my travel budget?",
+    answer: "With the Budget Tracker 💸, you can log expenses, assign categories, and view real-time spending summaries."
+  },
+  {
+    question: "Is there help with language while traveling?",
+    answer: "Absolutely! Use the Phrasebook 🗣️ to generate useful phrases tailored to your destination and travel style."
+  },
+  {
+    question: "Can I switch between light and dark mode?",
+    answer: "Absolutely! Planorama supports both light and dark themes. You can toggle it anytime from the header."
+  }
 ];
 
 
@@ -57,7 +49,7 @@ export const FAQ = () => {
   return (
     <div className="min-h-screen bg-Blue text-gray-800">
       <div className="container mx-auto px-6 py-16">
-        <h1 className="text-5xl font-bold text-center mb-8 text-teal-900">FAQs</h1>
+        <h1 className="text-5xl font-bold text-center mb-8 text-teal-900 dark:text-white">FAQs</h1>
 
         <div className="max-w-3xl mx-auto">
           {faqs.map((faq, index) => (

@@ -83,7 +83,8 @@ export const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 50, damping: 15 }}
-      className="w-full relative top-0 z-50 bg-Bluee dark:bg-black backdrop-blur-lg text-gray-800 dark:text-gray-200"
+      className="w-full relative top-0 z-50  bg-gradient-to-l from-indigo-100 via-indigo-200 to-indigo-100
+         dark:bg-black dark:from-indigo-900 dark:via-gray-900  dark:to-black backdrop-blur-lg text-gray-800 dark:text-gray-200"
     >
       <nav className="container mx-auto px-4 py-2">
         <div className="flex items-center justify-between">

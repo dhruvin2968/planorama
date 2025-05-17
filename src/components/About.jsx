@@ -3,10 +3,8 @@ import {
   FaMapMarkedAlt,
   FaGlobe,
   FaUsers,
-  FaSuitcaseRolling,
   FaMoneyBillWave,
   FaCalendarAlt,
-  FaImages,
   FaLanguage,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -21,13 +19,7 @@ const AboutComponent = () => {
       link: "/destination",
     },
     
-    {
-      icon: FaMoneyBillWave,
-      iconClass: "text-pink-500",
-      title: "Currency Converter 💱",
-      desc: "Convert currencies using fun, mock exchange rates for planning.",
-      link: "/currency",
-    },
+    
     {
       icon: FaMapMarkedAlt,
       iconClass: "text-blue-500",
@@ -36,17 +28,10 @@ const AboutComponent = () => {
       link: "/itinerarygenerator",
     },
     {
-      icon: FaUsers,
-      iconClass: "text-orange-500",
-      title: "Download Your Itineraries",
-      desc: "Easily export and access your saved travel plans anytime, anywhere.",
-      link: "/mydashboard",
-    },
-    {
-   icon: FaSuitcaseRolling,
+   icon: FaUsers,
   iconClass: "text-pink-600",
-  title: "AI Travel Chatbot 🤖",
-  desc: "Ask anything, anytime! Get instant travel suggestions, itinerary help, and packing tips from your smart assistant.",
+  title: "Live Chatbot Assistance 🤖",
+  desc: "Ask anything, anytime! Get instant travel suggestions, itinerary help or any help instantly",
   link: "/",
 },
     {
@@ -55,13 +40,6 @@ const AboutComponent = () => {
       title: "Trip Countdown + Planner 📅",
       desc: "Visual countdown with a daily notes planner for your entire trip.",
       link: "/planner",
-    },
-    {
-      icon: FaImages,
-      iconClass: "text-purple-500",
-      title: "Travel Gallery 📸",
-      desc: "Click-to-expand image modals to relive or pre-plan moments.",
-      link: "/gallery",
     },
     {
       icon: FaMoneyBillWave,
@@ -81,12 +59,13 @@ const AboutComponent = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-Bluee dark:bg-black px-6 py-12 flex flex-col items-center">
+    <div className="min-h-screen bg-indigo-100 from-indigo-100 via-indigo-200 to-indigo-100
+         dark:bg-black px-6 py-12 flex flex-col items-center">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-center mb-10"
+        className="text-center  mb-10"
       >
         <h1 className="text-5xl font-extrabold text-blue-700 dark:text-white mb-4 tracking-tight">
           What Would You Like To Do? 🚀
@@ -104,7 +83,7 @@ const AboutComponent = () => {
             <Link to={feature.link || "#"} key={index}>
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center transition-all cursor-pointer"
+                className=" bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center transition-all cursor-pointer"
               >
                 <Icon className={`${feature.iconClass} text-5xl mb-4`} />
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">{feature.title}</h3>

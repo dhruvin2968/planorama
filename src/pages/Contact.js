@@ -54,24 +54,24 @@ export const Contact = () => {
 
   return (
     <div
-      className="relative w-full min-h-screen flex items-center justify-center bg-cover bg-center"
-      style={{ backgroundImage: "url('/images/contact-bg.jpg')" }}
+      className=" bg-indigo-100 dark:bg-gradient-to-br dark:from-indigo-900 dark:via-gray-900  dark:to-black w-full min-h-screen flex items-center justify-center  bg-cover bg-center"
+      
     >
-      <div className="bg-white bg-opacity-90 p-8 md:p-12 rounded-2xl shadow-lg max-w-3xl w-full">
-        <h2 className="text-3xl font-bold text-gray-800 text-center mb-6">
+      <div className="bg-white dark:bg-black dark:from-indigo-900 dark:via-gray-900  dark:to-black  bg-opacity-90 p-8 md:p-12 rounded-2xl shadow-lg max-w-3xl w-full">
+        <h2 className="text-3xl font-bold dark:text-white text-gray-800 text-center mb-6">
           Get in Touch
         </h2>
-        <p className="text-gray-600 text-center mb-6">
+        <p className="text-gray-600 dark:text-white text-center mb-6">
           Have a question or want to plan your next trip? Contact us now!
         </p>
-        <div className="flex flex-col md:flex-row md:gap-6 mb-6">
-          <div className="flex items-center gap-3 text-gray-700">
+        <div className="flex  flex-col md:flex-row md:gap-6 mb-6">
+          <div className="flex dark:text-white items-center gap-3 text-gray-700">
             <Mail size={20} /> <span>support@planorama.com</span>
           </div>
-          <div className="flex items-center gap-3 text-gray-700">
+          <div className="flex dark:text-white items-center gap-3 text-gray-700">
             <Phone size={20} /> <span>+91 8291619774</span>
           </div>
-          <div className="flex items-center gap-3 text-gray-700">
+          <div className="flex dark:text-white items-center gap-3 text-gray-700">
             <MapPin size={20} /> <span>Mumbai, India</span>
           </div>
         </div>
