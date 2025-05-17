@@ -7,7 +7,7 @@ const Beatrix = ({ onClick }) => {
       <img
         src="/beatrix.png"
         alt="Beatrix"
-        className="w-28 h-28 object-contain"
+        className="md:w-26 md:h-26 h-24 w-24 object-contain"
       />
     </div>
   );

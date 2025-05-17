@@ -9,7 +9,7 @@ const destinations = [
     region: "Europe",
     emoji: "🏙️",
     description: "The City of Light and Love.",
-    image: "https://images.pexels.com/photos/532826/pexels-photo-532826.jpeg",
+    image: "/paris.jpeg",
   },
   {
     name: "Kyoto",
@@ -17,7 +17,7 @@ const destinations = [
     region: "Asia",
     emoji: "🏯",
     description: "Historic temples and cherry blossoms.",
-    image: "https://images.pexels.com/photos/402028/pexels-photo-402028.jpeg",
+    image: "/kyoto.jpeg",
   },
   {
     name: "Cape Town",
@@ -25,7 +25,7 @@ const destinations = [
     region: "Africa",
     emoji: "🌄",
     description: "Mountains, beaches, and wildlife.",
-    image: "https://images.pexels.com/photos/259447/pexels-photo-259447.jpeg",
+    image: "/cape.jpeg",
   },
   {
     name: "New York",
@@ -33,7 +33,7 @@ const destinations = [
     region: "America",
     emoji: "🗽",
     description: "Skyscrapers and city buzz.",
-    image: "https://images.pexels.com/photos/802024/pexels-photo-802024.jpeg",
+    image: "/newyork.jpeg",
   },
   {
     name: "Rio de Janeiro",
@@ -41,7 +41,7 @@ const destinations = [
     region: "America",
     emoji: "🎉",
     description: "Beaches and carnivals.",
-    image: "https://images.pexels.com/photos/2868242/pexels-photo-2868242.jpeg",
+    image: "/rio.jpeg",
   },
   {
     name: "Santorini",
@@ -49,7 +49,7 @@ const destinations = [
     region: "Europe",
     emoji: "🏖️",
     description: "White houses and ocean views.",
-    image: "https://images.pexels.com/photos/1010657/pexels-photo-1010657.jpeg",
+    image: "/santo.jpeg",
   },
   {
     name: "Bali",
@@ -57,7 +57,7 @@ const destinations = [
     region: "Asia",
     emoji: "🌴",
     description: "Tropical paradise with serene beaches and temples.",
-    image: "https://images.pexels.com/photos/2474689/pexels-photo-2474689.jpeg",
+    image: "/bali.jpeg",
   },
   {
     name: "Venice",
@@ -65,7 +65,7 @@ const destinations = [
     region: "Europe",
     emoji: "🚤",
     description: "Romantic canals and timeless architecture.",
-    image: "https://images.pexels.com/photos/1796715/pexels-photo-1796715.jpeg",
+    image: "/venice.jpeg",
   },
   {
     name: "Marrakech",
@@ -73,7 +73,7 @@ const destinations = [
     region: "Africa",
     emoji: "🕌",
     description: "Vibrant markets and desert vibes.",
-    image: "https://images.pexels.com/photos/6175286/pexels-photo-6175286.jpeg",
+    image: "/marrakech.jpeg",
   },
   {
     name: "Buenos Aires",
@@ -81,7 +81,7 @@ const destinations = [
     region: "America",
     emoji: "💃",
     description: "Tango, steak, and Latin passion.",
-    image: "https://images.pexels.com/photos/3779149/pexels-photo-3779149.jpeg",
+    image: "/buenos.jpeg",
   },
   {
     name: "Sydney",
@@ -89,7 +89,7 @@ const destinations = [
     region: "Asia",
     emoji: "🌉",
     description: "Iconic opera house and coastal vibes.",
-    image: "https://images.pexels.com/photos/2193300/pexels-photo-2193300.jpeg",
+    image: "/sydney.jpeg",
   },
   {
     name: "Reykjavik",
@@ -97,7 +97,7 @@ const destinations = [
     region: "Europe",
     emoji: "❄️",
     description: "Northern lights and geothermal spas.",
-    image: "https://images.pexels.com/photos/347141/pexels-photo-347141.jpeg",
+    image: "/reyk.jpeg",
   },
   {
     name: "Petra",
@@ -105,7 +105,7 @@ const destinations = [
     region: "Asia",
     emoji: "🏜️",
     description: "Ancient rock-cut architecture in the desert.",
-    image: "https://images.pexels.com/photos/1619316/pexels-photo-1619316.jpeg",
+    image: "/petra.jpeg",
   },
   {
     name: "Banff",
@@ -113,7 +113,7 @@ const destinations = [
     region: "America",
     emoji: "🏔️",
     description: "Turquoise lakes and snow-capped peaks.",
-    image: "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg",
+    image: "/banf.jpeg",
   },
   {
     name: "Prague",
@@ -121,7 +121,7 @@ const destinations = [
     region: "Europe",
     emoji: "🕍",
     description: "Fairy-tale city with gothic charm.",
-    image: "https://images.pexels.com/photos/356844/pexels-photo-356844.jpeg",
+    image: "/prague.jpeg",
   },
   {
     name: "Zanzibar",
@@ -130,7 +130,7 @@ const destinations = [
     emoji: "🏝️",
     description: "Exotic spice island with pristine beaches.",
     image:
-      "https://content.r9cdn.net/rimg/dimg/e1/6e/f59cbe52-city-1557-1661ba47712.jpg?width=1366&height=768&xhint=2066&yhint=1423&crop=true",
+      "/zanz",
   },
   {
     name: "Hoi An",
@@ -138,7 +138,7 @@ const destinations = [
     region: "Asia",
     emoji: "🏮",
     description: "Lantern-lit nights and riverside charm.",
-    image: "https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg",
+    image: "/holian.jpeg",
   },
   {
     name: "Lisbon",
@@ -146,7 +146,7 @@ const destinations = [
     region: "Europe",
     emoji: "🚋",
     description: "Colorful streets, coastal beauty, and rich history.",
-    image: "https://images.pexels.com/photos/1388030/pexels-photo-1388030.jpeg",
+    image: "/lisbon.jpeg",
   },
 ];
 

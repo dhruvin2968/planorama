@@ -83,9 +83,9 @@ export const Chatbot = () => {
       {/* Chatbot Toggle Button */}
       <div
         onClick={toggleChatbot}
-        className={`fixed bottom-4 right-0 z-50 cursor-pointer p-3 rounded-full bg-transparent transition-transform duration-300 ${
+        className={`fixed md:-bottom-6 md:-right-6 -bottom-10 -right-10  z-50 cursor-pointer p-3 rounded-full bg-transparent transition-transform duration-300 ${
           isOpen
-            ? "translate-x-[calc(100%-130px)] translate-y-[calc(100%-220px)]"
+            ? "translate-x-[calc(100%-170px)] translate-y-[calc(100%-250px)]"
             : ""
         }`}
       >
