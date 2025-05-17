@@ -88,7 +88,7 @@ export const Home = () => {
           </div>
         </main>
       </div>
-      <div className="theme-selector">
+      <div id="theme-selector">
         <AboutComponent />
         <motion.div
           className="flex items-center justify-center gap-3 text-3xl sm:text-4xl font-extrabold bg-indigo-600 dark:bg-white from-indigo-600 via-indigo-800 to-blue-500 bg-clip-text text-transparent py-6 drop-shadow-lg"
