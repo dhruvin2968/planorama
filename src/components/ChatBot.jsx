@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Send, Maximize, Minimize } from "lucide-react";
+import { Maximize, Minimize } from "lucide-react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import Beatrix from "./BeatrixImg";
 import MessageComponent from "./MessageComponent";
@@ -83,10 +83,10 @@ export const Chatbot = () => {
       {/* Chatbot Toggle Button */}
       <div
         onClick={toggleChatbot}
-        className={`fixed md:-bottom-6 md:-right-6 -bottom-10 -right-10  z-50 cursor-pointer p-3 rounded-full bg-transparent transition-transform duration-300 ${
-          isOpen
-            ? "translate-x-[calc(100%-170px)] translate-y-[calc(100%-250px)]"
-            : ""
+        className={`fixed md:-bottom-0 md:-right-1 -bottom-0 -right-2  z-50 cursor-pointer p-3 rounded-full bg-transparent transition-transform duration-1000 ${
+          
+    isOpen ? "rotate-[360deg]" : ""
+  }
         }`}
       >
         <Beatrix />
@@ -143,15 +143,15 @@ export const Chatbot = () => {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Type your message..."
+              placeholder="Type and Press Enter to Send"
               className="flex-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
-            <button
+            {/* <button
               type="submit"
               className="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-2 rounded-lg hover:bg-blue-700 transition-colors"
             >
               <Send size={20} />
-            </button>
+            </button> */}
           </div>
         </form>
       </div>

@@ -3,10 +3,9 @@ import React from "react";
 export const Footer = () => {
   return (
     <footer
-      className="relative -z-0 bg-indigo-100 from-indigo-100 via-indigo-200 to-indigo-100
-         dark:bg-black text-gray-700 dark:text-gray-300 bg-fixed"
+      className="relative -z-0 bg-gradient-to-l from-indigo-100 via-indigo-200 to-indigo-100
+         dark:bg-black dark:from-indigo-900 dark:via-black  dark:to-black text-gray-700 dark:text-gray-300 bg-fixed"
     >
-      {/* Wavy Border */}
 
       {/* Footer Content */}
       <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 relative z-10">
