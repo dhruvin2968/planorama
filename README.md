@@ -20,7 +20,11 @@ Planorama is a full-stack travel web app built for modern wanderers. With 6 powe
 
 ## 📸 Screenshots
 
-> Include screenshots or a Loom video demo here if available!
+![image](https://github.com/user-attachments/assets/f37a37e1-18f9-4504-993d-440aa4733027)
+![image](https://github.com/user-attachments/assets/6d92ef5f-bba0-44cb-a9e6-7f422ab7337a)
+![image](https://github.com/user-attachments/assets/efef874e-4313-423b-a035-fad6101a043a)
+![image](https://github.com/user-attachments/assets/aaf95748-0958-4bfc-a6bd-457f9e99a88d)
+
 
 ---
 
