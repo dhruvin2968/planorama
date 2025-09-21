@@ -53,7 +53,7 @@ export const Header = () => {
     { path: "/about", label: "About" },
     { path: "/contact", label: "Contact" },
     { path: "/faqs", label: "FAQs" },
-    ...(isAuth ? [{ path: "/mydashboard", label: "Dashboard" }] : []),
+    ...(isAuth ? [{ path: "/mydashboard", label: "Dashboard" },{ path: "/chat", label: "Chat" }] : []),
   ];
 
   const navLinkClasses = (isActive) =>
