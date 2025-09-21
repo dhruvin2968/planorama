@@ -20,9 +20,10 @@ export const ChatDashboard = () => {
   const db = getFirestore();
   const [user, setUser] = useState(null);
   const [activeUsers, setActiveUsers] = useState({});
+  const [chatRooms, setChatRooms] = useState([]); // All chat rooms from Firestore
   const [selectedUser, setSelectedUser] = useState(null);
   const [messages, setMessages] = useState([]);
-  const [allMessages, setAllMessages] = useState({}); // eslint-disable-line
+  const [allMessages, setAllMessages] = useState({}); //eslint-disable-line
   const [newMsg, setNewMsg] = useState("");
   const [isConnected, setIsConnected] = useState(false);
   const [messageListeners, setMessageListeners] = useState({}); // Track Firestore listeners
@@ -36,6 +37,49 @@ export const ChatDashboard = () => {
 
     return () => unsubscribe();
   }, [auth]);
+
+  // Load chat rooms from Firestore when user is authenticated
+  useEffect(() => {
+    if (!user) return;
+
+    console.log("Loading chat rooms for user:", user.uid);
+    
+    // Query all chats where current user is a participant
+    const chatsRef = collection(db, "chats");
+    const chatsQuery = query(chatsRef);
+    
+    const unsubscribe = onSnapshot(chatsQuery, (snapshot) => {
+      const userChatRooms = [];
+      
+      snapshot.forEach((doc) => {
+        const data = doc.data();
+        
+        // Check if current user is a participant in this chat
+        if (data.participants && data.participants.includes(user.uid)) {
+          const otherParticipantUid = data.participants.find(uid => uid !== user.uid);
+          const otherParticipantName = data.participantNames?.[otherParticipantUid] || "Unknown User";
+          
+          userChatRooms.push({
+            roomId: doc.id,
+            otherParticipantUid,
+            otherParticipantName,
+            lastMessage: data.lastMessage,
+            updatedAt: data.updatedAt?.toDate() || new Date()
+          });
+        }
+      });
+      
+      // Sort by most recent activity
+      userChatRooms.sort((a, b) => b.updatedAt - a.updatedAt);
+      
+      console.log(`Loaded ${userChatRooms.length} chat rooms:`, userChatRooms);
+      setChatRooms(userChatRooms);
+    }, (error) => {
+      console.error("Error loading chat rooms:", error);
+    });
+
+    return () => unsubscribe();
+  }, [user, db]);
 
   // Initialize socket connection when user is authenticated
   useEffect(() => {
@@ -163,6 +207,15 @@ export const ChatDashboard = () => {
     }//eslint-disable-next-line
   }, [selectedUser, user, db]);
 
+  // Helper function to start a new chat with any user
+  const startNewChat = (userToChat) => {
+    console.log("Starting new chat with:", userToChat);
+    setSelectedUser({
+      uid: userToChat.uid || userToChat.otherParticipantUid,
+      name: userToChat.name || userToChat.otherParticipantName
+    });
+  };
+
   // Generate consistent roomId
   const getRoomId = (uid1, uid2) => [uid1, uid2].sort().join("_");
 
@@ -240,35 +293,83 @@ export const ChatDashboard = () => {
       {/* Sidebar */}
       <div className="col-span-1 bg-gray-100 rounded-2xl p-4 shadow">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-lg font-semibold">Active Users</h2>
+          <h2 className="text-lg font-semibold">Chats</h2>
           <div className={`w-3 h-3 rounded-full ${isConnected ? 'bg-green-500' : 'bg-red-500'}`} title={isConnected ? 'Connected' : 'Disconnected'}></div>
         </div>
         
-        <div className="text-sm text-gray-600 mb-2">
+        <div className="text-sm text-gray-600 mb-4">
           You: {user.displayName || user.email || "Anonymous"}
         </div>
-        
-        <ul className="space-y-2">
-          {Object.entries(activeUsers).length === 0 ? (
-            <li className="text-gray-400 text-sm">No other users online</li>
-          ) : (
-            Object.entries(activeUsers).map(([uid, u]) => (
-              uid !== user.uid && (
-                <li
-                  key={uid}
-                  onClick={() => setSelectedUser({ uid, ...u })}
-                  className={`cursor-pointer p-2 rounded-lg transition-colors ${
-                    selectedUser?.uid === uid
-                      ? "bg-blue-500 text-white"
-                      : "bg-white hover:bg-blue-100"
-                  }`}
-                >
-                  {u.name}
-                </li>
-              )
-            ))
-          )}
-        </ul>
+
+        {/* Chat Rooms Section */}
+        {chatRooms.length > 0 && (
+          <div className="mb-6">
+            <h3 className="text-sm font-medium text-gray-700 mb-2">Recent Chats</h3>
+            <ul className="space-y-2">
+              {chatRooms.map((room) => {
+                const isOnline = activeUsers[room.otherParticipantUid];
+                const isSelected = selectedUser?.uid === room.otherParticipantUid;
+                
+                return (
+                  <li
+                    key={room.roomId}
+                    onClick={() => startNewChat(room)}
+                    className={`cursor-pointer p-3 rounded-lg transition-colors ${
+                      isSelected
+                        ? "bg-blue-500 text-white"
+                        : "bg-white hover:bg-blue-50"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-2">
+                        <div className={`w-2 h-2 rounded-full ${isOnline ? 'bg-green-500' : 'bg-gray-400'}`}></div>
+                        <span className="font-medium">{room.otherParticipantName}</span>
+                      </div>
+                      {isOnline && <span className="text-xs opacity-75">Online</span>}
+                    </div>
+                    {room.lastMessage && (
+                      <p className={`text-xs mt-1 truncate ${isSelected ? 'text-blue-100' : 'text-gray-500'}`}>
+                        {room.lastMessage.from}: {room.lastMessage.text}
+                      </p>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        )}
+
+        {/* Active Users Section (for starting new chats) */}
+        <div>
+          <h3 className="text-sm font-medium text-gray-700 mb-2">Start New Chat</h3>
+          <ul className="space-y-2">
+            {Object.entries(activeUsers).length === 0 ? (
+              <li className="text-gray-400 text-sm">No other users online</li>
+            ) : (
+              Object.entries(activeUsers).map(([uid, u]) => {
+                // Don't show current user or users we already have chats with
+                const alreadyHaveChat = chatRooms.some(room => room.otherParticipantUid === uid);
+                
+                return uid !== user.uid && !alreadyHaveChat && (
+                  <li
+                    key={uid}
+                    onClick={() => startNewChat({ uid, name: u.name })}
+                    className={`cursor-pointer p-2 rounded-lg transition-colors ${
+                      selectedUser?.uid === uid
+                        ? "bg-blue-500 text-white"
+                        : "bg-white hover:bg-blue-100"
+                    }`}
+                  >
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                      <span>{u.name}</span>
+                    </div>
+                  </li>
+                );
+              })
+            )}
+          </ul>
+        </div>
       </div>
 
       {/* Chat Window */}
