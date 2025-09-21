@@ -15,6 +15,7 @@ import {
   Phrases,
   Mood,
   ItineraryGenerator,
+  ChatDashboard,
 } from "../pages";
 export const AllRoutes = () => {
   return (
@@ -35,6 +36,7 @@ export const AllRoutes = () => {
         <Route path="phrases" element={<Phrases />} />
         <Route path="mood" element={<Mood />} />
         <Route path="itinerarygenerator" element={<ItineraryGenerator />} />
+        <Route path="chat" element={<ChatDashboard />} />
       </Routes>
     </div>
   );

@@ -13,3 +13,4 @@ export { BudgetTracker } from "./BudgetTracker";
 export { Phrases } from "./Phrases";
 export { Mood } from "./Mood";
 export { ItineraryGenerator } from "./ItineraryGenerator";
+export { ChatDashboard } from "./ChatDashboard";
